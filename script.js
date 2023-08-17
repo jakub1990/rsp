@@ -24,10 +24,8 @@ function getPlayerChoice() {
     return answer;
 }
 
-function playRound() {
-    const playerSelect = getPlayerChoice();
+function playRound(computerSelect, playerSelect) {
     let result;
-    const computerSelect = getComputerChoice();
 
     if(computerSelect === playerSelect) {
         result = 'Tie!';
@@ -58,12 +56,12 @@ function playRound() {
 
 
   function game() {
-       playRound();
+       playRound(getComputerChoice(), getPlayerChoice());
   }
 
   for(let i = 0; i < 5; i++) {
   game();
   }
-  
+
   printWinner();
 
